@@ -192,25 +192,25 @@ export default function Register() {
 
   return (
     <div className="w-full max-w-3xl mx-auto">
-      <h1 className="text-4xl font-bold text-white text-center mb-10 font-space">
+      <h1 className="text-2xl md:text-4xl font-bold text-white text-center mb-6 md:mb-10 font-space">
         Registration Form
       </h1>
       <div
-        className={`w-full p-6 md:p-10 bg-[#161b22] rounded-xl border border-[#30363d] shadow-xl overflow-hidden relative ${
-          isSubmitted ? "" : "min-h-[800px]"
+        className={`w-full p-4 md:p-10 bg-[#161b22] rounded-xl border border-[#30363d] shadow-xl overflow-hidden relative ${
+          isSubmitted ? "" : "min-h-[600px] md:min-h-[800px]"
         }`}
       >
         {!isSubmitted && (
           <>
-            <div className="flex justify-between items-center mb-8">
-              <h2 className="text-3xl font-bold text-white">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 md:mb-8 gap-2">
+              <h2 className="text-xl md:text-3xl font-bold text-white">
                 {step === totalSteps - 1
                   ? "Review Details"
                   : step === 0
                   ? "Team Details & Leader"
                   : `Team Member ${step}`}
               </h2>
-              <div className="text-[#8b949e] font-medium">
+              <div className="text-[#8b949e] font-medium text-sm md:text-base">
                 Step {step + 1} of {totalSteps}
               </div>
             </div>
@@ -353,7 +353,7 @@ export default function Register() {
                     <h4 className="text-xl font-semibold text-[#1f6feb] border-b border-[#30363d] pb-2">
                       Team Info
                     </h4>
-                    <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                       <div>
                         <span className="block text-[#8b949e]">Team Name</span>
                         <span className="text-white font-medium">
@@ -413,7 +413,7 @@ export default function Register() {
               )}
 
               {/* Navigation Buttons */}
-              <div className="flex gap-4 pt-8">
+              <div className="flex flex-col md:flex-row gap-4 pt-8">
                 {step > 0 && (
                   <button
                     onClick={prevStep}
