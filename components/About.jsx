@@ -1,13 +1,13 @@
 export default function HackathonAboutSection() {
   return (
     <section className="bg-[#0f1214] text-gray-200 py-16">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="mx-auto max-w-6xl px-6">
         {/* Heading + intro */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">
+        <div className="mx-auto mb-14 max-w-2xl text-center">
+          <h2 className="mb-4 text-3xl font-semibold text-white md:text-4xl">
             About the Hackathon
           </h2>
-          <p className="text-sm md:text-base text-gray-300">
+          <p className="text-sm text-gray-300 md:text-base">
             EPOCH 4.0 Hackathon challenges teams to analyze real problem
             statements and build working application prototypes in just 24
             hours. The focus is on creativity, usability, functionality, and a
@@ -15,110 +15,88 @@ export default function HackathonAboutSection() {
           </p>
         </div>
 
-        {/* Two cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Left card */}
-          <div className="bg-[#0d1112] border border-[#1f2628] rounded-xl p-6 shadow-inner">
-            <div className="flex items-center mb-4">
+        {/* Cards */}
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          {/* Event Highlights */}
+          <div className="rounded-xl border border-[#1f2628] bg-[#0d1112] p-6">
+            <div className="mb-5 flex items-center gap-3">
               <img
                 src="/icons/Lightbulb.svg"
-                alt="Event highlights icon"
-                className="w-6 h-6 mr-3 shrink-0"
+                alt=""
+                className="h-6 w-6 shrink-0"
               />
               <h3 className="text-lg font-medium text-white">
                 Event Highlights
               </h3>
             </div>
 
-            <ul className="space-y-3 text-gray-300">
-              <li className="flex items-start gap-3">
-                <img
-                  src="/icons/$.svg"
-                  alt="Cash prize icon"
-                  className="w-5 h-5 mt-1 shrink-0"
-                />
-                <div className="text-sm">
+            <ul className="space-y-4">
+              <li className="flex items-center gap-3">
+                <img src="/icons/$.svg" className="h-5 w-5 shrink-0" alt="" />
+                <span className="text-sm">
                   Cash prizes:{" "}
-                  <span className="text-white font-semibold">
+                  <span className="font-semibold text-white">
                     ₹5,000 • ₹3,000 • ₹1,000
                   </span>
-                </div>
+                </span>
               </li>
-              <li className="flex items-start gap-3">
+
+              <li className="flex items-center gap-3">
                 <img
                   src="/icons/Group.svg"
-                  alt="Free registration icon"
-                  className="w-5 h-5 mt-1 shrink-0"
+                  className="h-5 w-5 shrink-0"
+                  alt=""
                 />
-                <div className="text-sm">Free Registration</div>
+                <span className="text-sm">Free Registration</span>
               </li>
-              <li className="flex items-start gap-3">
+
+              <li className="flex items-center gap-3">
                 <img
                   src="/icons/Gifts.svg"
-                  alt="Goodies icon"
-                  className="w-5 h-5 mt-1 shrink-0"
+                  className="h-5 w-5 shrink-0"
+                  alt=""
                 />
-                <div className="text-sm">Goodies and exciting prizes</div>
+                <span className="text-sm">Goodies and exciting prizes</span>
               </li>
-              <li className="flex items-start gap-3">
+
+              <li className="flex items-center gap-3">
                 <img
-                  src="/icons/Task alt.svg"
-                  alt="Certificate icon"
-                  className="w-5 h-5 mt-1 shrink-0"
+                  src="/icons/Task%20alt.svg"
+                  className="h-5 w-5 shrink-0"
+                  alt=""
                 />
-                <div className="text-sm">Certificates for participants</div>
+                <span className="text-sm">Certificates for participants</span>
               </li>
             </ul>
           </div>
 
-          {/* Right card */}
-          <div className="bg-[#0d1112] border border-[#1f2628] rounded-xl p-6 shadow-inner">
-            <div className="flex items-center mb-4">
+          {/* What to Expect */}
+          <div className="rounded-xl border border-[#1f2628] bg-[#0d1112] p-6">
+            <div className="mb-5 flex items-center gap-3">
               <img
-                src="/icons/Award star.svg"
-                alt="Goodies icon"
-                className="w-5 h-5 mt-1 shrink-0"
+                src="/icons/Award%20star.svg"
+                alt=""
+                className="h-6 w-6 shrink-0"
               />
               <h3 className="text-lg font-medium text-white">What to Expect</h3>
             </div>
 
-            <ul className="space-y-3 text-gray-300">
-              <li className="flex gap-3">
-                <img
-                  src="/icons/Task alt.svg"
-                  alt=""
-                  className="w-5 h-5 mt-1 shrink-0"
-                />
-                <div className="text-sm">Meals and refreshments throughout</div>
-              </li>
-              <li className="flex gap-3">
-                <img
-                  src="/icons/Task alt.svg"
-                  alt=""
-                  className="w-5 h-5 mt-1 shrink-0"
-                />
-                <div className="text-sm">
-                  24 hours of non-stop coding and innovation
-                </div>
-              </li>
-              <li className="flex gap-3">
-                <img
-                  src="/icons/Task alt.svg"
-                  alt=""
-                  className="w-5 h-5 mt-1 shrink-0"
-                />
-                <div className="text-sm">Mentorship from industry experts</div>
-              </li>
-              <li className="flex gap-3">
-                <img
-                  src="/icons/Task alt.svg"
-                  alt=""
-                  className="w-5 h-5 mt-1 shrink-0"
-                />
-                <div className="text-sm">
-                  Networking with like-minded developers
-                </div>
-              </li>
+            <ul className="space-y-4">
+              {[
+                "Meals and refreshments throughout",
+                "24 hours of non-stop coding and innovation",
+                "Mentorship from industry experts",
+                "Networking with like-minded developers",
+              ].map((text) => (
+                <li key={text} className="flex items-center gap-3">
+                  <img
+                    src="/icons/Task%20alt.svg"
+                    className="h-5 w-5 shrink-0"
+                    alt=""
+                  />
+                  <span className="text-sm">{text}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

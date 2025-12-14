@@ -252,7 +252,7 @@ export default function Register() {
   const totalSteps = formData.teamSize + 1;
 
   return (
-    <div className="w-full max-w-3xl mx-auto">
+    <section id="register" className="w-full max-w-3xl mx-auto scroll-mt-32">
       <h1 className="text-2xl md:text-4xl font-bold text-white text-center mb-6 md:mb-10 font-space">
         Registration Form
       </h1>
@@ -287,176 +287,158 @@ export default function Register() {
         )}
 
         <form className="relative">
-        <AnimatePresence initial={false} custom={direction} mode="wait">
-          {isSubmitted ? (
-            <motion.div
-              key="success"
-              custom={direction}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 },
-              }}
-              className="flex flex-col items-center justify-center py-20 text-center space-y-6"
-            >
-              <div className="w-24 h-24 bg-[#238636] rounded-full flex items-center justify-center mb-4 shadow-lg shadow-[#238636]/20">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-12 w-12 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={3}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-              </div>
-              <h2 className="text-3xl font-bold text-white">
-                Registration Successful!
-              </h2>
-              <p className="text-[#8b949e] text-lg max-w-md">
-                Your registration request has been sent successfully.
-                <br />
-                Check your email for further confirmation.
-              </p>
-              <button
-                onClick={handleReset}
-                className="mt-6 bg-[#21262d] hover:bg-[#30363d] text-[#c9d1d9] font-bold py-3 px-8 rounded-lg text-lg transition-colors duration-200 border border-[#30363d]"
+          <AnimatePresence initial={false} custom={direction} mode="wait">
+            {isSubmitted ? (
+              <motion.div
+                key="success"
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 },
+                }}
+                className="flex flex-col items-center justify-center py-20 text-center space-y-6"
               >
-                Submit Another Response
-              </button>
-            </motion.div>
-          ) : (
-            <motion.div
-              key={step}
-              custom={direction}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 },
-              }}
-              className="space-y-8 w-full"
-            >
-              {step === 0 && (
-                <>
-                  {/* Team Config */}
-                  <div className="space-y-3">
-                    <label className="block text-sm font-medium text-[#c9d1d9]">
-                      Team Name *
-                    </label>
-                    <input
-                      required
-                      value={formData.teamName}
-                      onChange={(e) =>
-                        setFormData({ ...formData, teamName: e.target.value })
-                      }
-                      type="text"
-                      placeholder="Enter Your Team Name"
-                      className="w-full bg-[#0d1117] border border-[#30363d] rounded-md px-4 py-3 text-white placeholder-[#8b949e] focus:outline-none focus:border-[#1f6feb] focus:ring-1 focus:ring-[#1f6feb] transition-all"
+                <div className="w-24 h-24 bg-[#238636] rounded-full flex items-center justify-center mb-4 shadow-lg shadow-[#238636]/20">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-12 w-12 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={3}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
                     />
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  </svg>
+                </div>
+                <h2 className="text-3xl font-bold text-white">
+                  Registration Successful!
+                </h2>
+                <p className="text-[#8b949e] text-lg max-w-md">
+                  Your registration request has been sent successfully.
+                  <br />
+                  Check your email for further confirmation.
+                </p>
+                <button
+                  onClick={handleReset}
+                  className="mt-6 bg-[#21262d] hover:bg-[#30363d] text-[#c9d1d9] font-bold py-3 px-8 rounded-lg text-lg transition-colors duration-200 border border-[#30363d]"
+                >
+                  Submit Another Response
+                </button>
+              </motion.div>
+            ) : (
+              <motion.div
+                key={step}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 },
+                }}
+                className="space-y-8 w-full"
+              >
+                {step === 0 && (
+                  <>
+                    {/* Team Config */}
                     <div className="space-y-3">
                       <label className="block text-sm font-medium text-[#c9d1d9]">
-                        Team Size *
+                        Team Name *
                       </label>
-                      <div className="w-full bg-[#161b22] border border-[#30363d] rounded-md px-4 py-3 text-[#8b949e] cursor-not-allowed text-sm flex items-center">
-                        4 Members (Fixed)
-                      </div>
+                      <input
+                        required
+                        value={formData.teamName}
+                        onChange={(e) =>
+                          setFormData({ ...formData, teamName: e.target.value })
+                        }
+                        type="text"
+                        placeholder="Enter Your Team Name"
+                        className="w-full bg-[#0d1117] border border-[#30363d] rounded-md px-4 py-3 text-white placeholder-[#8b949e] focus:outline-none focus:border-[#1f6feb] focus:ring-1 focus:ring-[#1f6feb] transition-all"
+                      />
                     </div>
 
-                    <div className="space-y-3">
-                      <label className="block text-sm font-medium text-[#c9d1d9]">
-                        Problem Statement
-                      </label>
-                      <div className="w-full bg-[#161b22] border border-[#30363d] rounded-md px-4 py-3 text-[#8b949e] cursor-not-allowed text-sm flex items-center">
-                        Problem statements will be revealed during the hackathon!
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="border-t border-[#30363d] my-8 pt-6">
-                    <h3 className="text-xl font-semibold text-white mb-6">
-                      Team Leader Details
-                    </h3>
-                    {renderCommonFields(formData.leader, handleLeaderChange)}
-                  </div>
-                </>
-              )}
-
-              {step > 0 && step < totalSteps - 1 && (
-                <>
-                  <h3 className="text-xl font-semibold text-white mb-6">
-                    Member {step} Details
-                  </h3>
-                  {renderCommonFields(
-                    formData.members[step - 1] || {},
-                    (e) => handleMemberChange(step - 1, e)
-                  )}
-                </>
-              )}
-
-              {step === totalSteps - 1 && (
-                <div className="space-y-6">
-                  <div className="bg-[#0d1117] p-6 rounded-lg border border-[#30363d] space-y-4">
-                    <h4 className="text-xl font-semibold text-[#1f6feb] border-b border-[#30363d] pb-2">
-                      Team Info
-                    </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                      <div>
-                        <span className="block text-[#8b949e]">Team Name</span>
-                        <span className="text-white font-medium">
-                          {formData.teamName}
-                        </span>
-                      </div>
-                      <div>
-                        <span className="block text-[#8b949e]">Team Size</span>
-                        <span className="text-white font-medium">
-                          {formData.teamSize}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-[#0d1117] p-6 rounded-lg border border-[#30363d] space-y-4">
-                    <h4 className="text-xl font-semibold text-[#1f6feb] border-b border-[#30363d] pb-2">
-                      Team Leader
-                    </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                      {Object.entries(formData.leader).map(([key, value]) => (
-                        <div key={key}>
-                          <span className="block text-[#8b949e] capitalize">
-                            {key}
-                          </span>
-                          <span className="text-white font-medium">
-                            {value || "-"}
-                          </span>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-3">
+                        <label className="block text-sm font-medium text-[#c9d1d9]">
+                          Team Size *
+                        </label>
+                        <div className="w-full bg-[#161b22] border border-[#30363d] rounded-md px-4 py-3 text-[#8b949e] cursor-not-allowed text-sm flex items-center">
+                          4 Members (Fixed)
                         </div>
-                      ))}
-                    </div>
-                  </div>
+                      </div>
 
-                  {formData.members.map((member, index) => (
-                    <div
-                      key={index}
-                      className="bg-[#0d1117] p-6 rounded-lg border border-[#30363d] space-y-4"
-                    >
+                      <div className="space-y-3">
+                        <label className="block text-sm font-medium text-[#c9d1d9]">
+                          Problem Statement
+                        </label>
+                        <div className="w-full bg-[#161b22] border border-[#30363d] rounded-md px-4 py-3 text-[#8b949e] cursor-not-allowed text-sm flex items-center">
+                          Problem statements will be revealed during the
+                          hackathon!
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="border-t border-[#30363d] my-8 pt-6">
+                      <h3 className="text-xl font-semibold text-white mb-6">
+                        Team Leader Details
+                      </h3>
+                      {renderCommonFields(formData.leader, handleLeaderChange)}
+                    </div>
+                  </>
+                )}
+
+                {step > 0 && step < totalSteps - 1 && (
+                  <>
+                    <h3 className="text-xl font-semibold text-white mb-6">
+                      Member {step} Details
+                    </h3>
+                    {renderCommonFields(formData.members[step - 1] || {}, (e) =>
+                      handleMemberChange(step - 1, e)
+                    )}
+                  </>
+                )}
+
+                {step === totalSteps - 1 && (
+                  <div className="space-y-6">
+                    <div className="bg-[#0d1117] p-6 rounded-lg border border-[#30363d] space-y-4">
                       <h4 className="text-xl font-semibold text-[#1f6feb] border-b border-[#30363d] pb-2">
-                        Member {index + 2}
+                        Team Info
                       </h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                        {Object.entries(member).map(([key, value]) => (
+                        <div>
+                          <span className="block text-[#8b949e]">
+                            Team Name
+                          </span>
+                          <span className="text-white font-medium">
+                            {formData.teamName}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="block text-[#8b949e]">
+                            Team Size
+                          </span>
+                          <span className="text-white font-medium">
+                            {formData.teamSize}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-[#0d1117] p-6 rounded-lg border border-[#30363d] space-y-4">
+                      <h4 className="text-xl font-semibold text-[#1f6feb] border-b border-[#30363d] pb-2">
+                        Team Leader
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        {Object.entries(formData.leader).map(([key, value]) => (
                           <div key={key}>
                             <span className="block text-[#8b949e] capitalize">
                               {key}
@@ -468,43 +450,65 @@ export default function Register() {
                         ))}
                       </div>
                     </div>
-                  ))}
+
+                    {formData.members.map((member, index) => (
+                      <div
+                        key={index}
+                        className="bg-[#0d1117] p-6 rounded-lg border border-[#30363d] space-y-4"
+                      >
+                        <h4 className="text-xl font-semibold text-[#1f6feb] border-b border-[#30363d] pb-2">
+                          Member {index + 2}
+                        </h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                          {Object.entries(member).map(([key, value]) => (
+                            <div key={key}>
+                              <span className="block text-[#8b949e] capitalize">
+                                {key}
+                              </span>
+                              <span className="text-white font-medium">
+                                {value || "-"}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Navigation Buttons */}
+                <div className="flex flex-col md:flex-row gap-4 pt-8">
+                  {step > 0 && (
+                    <button
+                      onClick={prevStep}
+                      className="flex-1 bg-[#21262d] hover:bg-[#30363d] text-[#c9d1d9] font-bold py-3 rounded-lg text-lg transition-colors duration-200 border border-[#30363d] cursor-target cursor-pointer"
+                    >
+                      Back
+                    </button>
+                  )}
+
+                  {step < totalSteps - 1 ? (
+                    <button
+                      onClick={nextStep}
+                      className="flex-1 bg-[#1f6feb] hover:bg-[#238636] text-white font-bold py-3 rounded-lg text-lg transition-colors duration-200 shadow-md cursor-target cursor-pointer"
+                    >
+                      {step === totalSteps - 2
+                        ? "Review Details"
+                        : "Next: Add Member"}
+                    </button>
+                  ) : (
+                    <button
+                      onClick={handleSubmit}
+                      className="flex-1 bg-[#238636] hover:bg-[#2ea043] text-white font-bold py-3 rounded-lg text-lg transition-colors duration-200 shadow-md cursor-pointer cursor-target"
+                    >
+                      Commit To Challenge
+                    </button>
+                  )}
                 </div>
-              )}
-
-              {/* Navigation Buttons */}
-              <div className="flex flex-col md:flex-row gap-4 pt-8">
-                {step > 0 && (
-                  <button
-                    onClick={prevStep}
-                    className="flex-1 bg-[#21262d] hover:bg-[#30363d] text-[#c9d1d9] font-bold py-3 rounded-lg text-lg transition-colors duration-200 border border-[#30363d]"
-                  >
-                    Back
-                  </button>
-                )}
-
-                {step < totalSteps - 1 ? (
-                  <button
-                    onClick={nextStep}
-                    className="flex-1 bg-[#1f6feb] hover:bg-[#238636] text-white font-bold py-3 rounded-lg text-lg transition-colors duration-200 shadow-md"
-                  >
-                    {step === totalSteps - 2
-                      ? "Review Details"
-                      : "Next: Add Member"}
-                  </button>
-                ) : (
-                  <button
-                    onClick={handleSubmit}
-                    className="flex-1 bg-[#238636] hover:bg-[#2ea043] text-white font-bold py-3 rounded-lg text-lg transition-colors duration-200 shadow-md"
-                  >
-                    Commit To Challenge
-                  </button>
-                )}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </form>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </form>
       </div>
 
       {/* Error Popup */}
@@ -556,6 +560,6 @@ export default function Register() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </section>
   );
 }
