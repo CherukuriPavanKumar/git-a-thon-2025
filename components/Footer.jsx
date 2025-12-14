@@ -26,13 +26,25 @@ export default function Footer() {
 
       {/* Socials — bottom right */}
       <div className="absolute bottom-6 right-6 flex gap-3 my-[-10]">
-        <a className="bg-[#161b22] hover:bg-[#21262d] text-gray-300 px-3 py-2 rounded-md text-sm transition cursor-target">
+        <a
+          className="bg-[#161b22] hover:bg-[#21262d] text-gray-300 px-3 py-2 rounded-md text-sm transition cursor-target"
+          href="https://github.com/github-community-gitam"
+          target="_blank"
+        >
           git
         </a>
-        <a className="bg-[#161b22] hover:bg-[#21262d] text-gray-300 px-3 py-2 rounded-md text-sm transition cursor-target">
+        <a
+          className="bg-[#161b22] hover:bg-[#21262d] text-gray-300 px-3 py-2 rounded-md text-sm transition cursor-target"
+          href="https://www.instagram.com/githubcommunitygitam/"
+          target="_blank"
+        >
           insta
         </a>
-        <a className="bg-[#161b22] hover:bg-[#21262d] text-gray-300 px-3 py-2 rounded-md text-sm transition cursor-target">
+        <a
+          className="bg-[#161b22] hover:bg-[#21262d] text-gray-300 px-3 py-2 rounded-md text-sm transition cursor-target"
+          href="https://www.linkedin.com/company/githubcommunitygitam/posts/?feedView=all"
+          target="_blank"
+        >
           in
         </a>
       </div>
