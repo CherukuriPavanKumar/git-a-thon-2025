@@ -252,7 +252,7 @@ export default function Register() {
   const totalSteps = formData.teamSize + 1;
 
   return (
-    <section id="register" className="w-full max-w-3xl mx-auto scroll-mt-32">
+    <section id="Register" className="w-full max-w-3xl mx-auto scroll-mt-32">
       <h1 className="text-2xl md:text-4xl font-bold text-white text-center mb-6 md:mb-10 font-space">
         Registration Form
       </h1>

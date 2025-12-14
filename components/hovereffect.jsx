@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback, useMemo } from "react";
+import { useEffect, useRef, useCallback, useMemo, useState } from "react";
 import { gsap } from "gsap";
 
 const TargetCursor = ({
@@ -18,8 +18,15 @@ const TargetCursor = ({
   const tickerFnRef = useRef(null);
   const activeStrengthRef = useRef(0);
 
+  // Fix hydration mismatch by computing isMobile only on client
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const isMobile = useMemo(() => {
-    if (typeof window === "undefined") return true;
+    if (!isMounted || typeof window === "undefined") return true;
 
     const hasTouchScreen =
       "ontouchstart" in window || navigator.maxTouchPoints > 0;
@@ -30,7 +37,7 @@ const TargetCursor = ({
       (hasTouchScreen && isSmallScreen) ||
       /android|iphone|ipad|ipod/i.test(userAgent.toLowerCase())
     );
-  }, []);
+  }, [isMounted]);
 
   const constants = useMemo(
     () => ({
@@ -329,7 +336,8 @@ const TargetCursor = ({
     }
   }, [spinDuration, isMobile]);
 
-  if (isMobile) {
+  // Prevent hydration mismatch by not rendering until client-side
+  if (!isMounted || isMobile) {
     return null;
   }
 

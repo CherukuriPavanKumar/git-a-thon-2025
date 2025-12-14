@@ -5,11 +5,13 @@ import ComSpons from "../components/ComSpons";
 import ProbStmts from "../components/ProbStmts";
 import Register from "../components/Register";
 import Footer from "@/components/Footer";
+import DarkVeil from "@/components/background.jsx";
 
 export default function Home() {
   return (
-    <main className="bg-[#0f1214] text-white min-h-screen">
+    <main className="text-white min-h-screen">
       <Navbar />
+      {/* <DarkVeil /> */}
 
       <Hero />
 

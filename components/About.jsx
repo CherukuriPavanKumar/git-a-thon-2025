@@ -1,6 +1,6 @@
 export default function HackathonAboutSection() {
   return (
-    <section className="bg-[#0f1214] text-gray-200 py-16">
+    <section className="text-gray-200 py-16">
       <div className="mx-auto max-w-6xl px-6">
         {/* Heading + intro */}
         <div className="mx-auto mb-14 max-w-2xl text-center">

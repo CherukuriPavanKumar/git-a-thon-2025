@@ -8,7 +8,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full bg-[#0f1214]">
+    <nav className="fixed top-0 left-0 z-50 w-full">
       <TargetCursor
         spinDuration={2}
         hideDefaultCursor={true}

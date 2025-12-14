@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0f1214] border-t border-[#1f2628] relative">
+    <footer className="border-t border-[#1f2628] relative">
       {/* Top content */}
       <div className="max-w-7xl mx-auto py-10">
         <div>

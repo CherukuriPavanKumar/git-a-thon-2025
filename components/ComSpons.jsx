@@ -14,7 +14,7 @@ export default function CommunitiesSponsors() {
   ];
 
   return (
-    <section className="bg-[#0f1214] py-24">
+    <section className="py-24">
       <div className="max-w-7xl mx-auto px-6 text-center">
         {/* Powered by Communities */}
         <h2 className="text-2xl md:text-3xl font-semibold text-white mb-13">
